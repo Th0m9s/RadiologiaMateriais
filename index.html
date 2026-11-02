@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Radiologia · Faculdade de Odontologia UFPel</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    >
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <svg
+      width="0"
+      height="0"
+      style="position: absolute"
+      aria-hidden="true"
+    >
+      <defs>
+        <pattern id="th2" width="10" height="7" patternUnits="userSpaceOnUse">
+          <rect width="10" height="7" fill="#dfe8ec"/>
+          <path d="M0 6H10" stroke="#6d818c" stroke-width="2"/>
+        </pattern>
+        <filter id="bl2">
+          <feGaussianBlur stdDeviation="1.2"/>
+        </filter>
+        <g id="tg">
+          <rect x="-400" y="-400" width="1200" height="1200" fill="#0b161e"/>
+          <rect x="-400" y="160" width="1200" height="400" fill="#2b3d48"/>
+          <path
+            d="M0 160Q130 148 400 160"
+            stroke="#7f95a1"
+            stroke-width="3"
+            fill="none"
+            opacity=".4"
+          />
+          <g filter="url(#bl2)">
+            <path
+              d="M98 150L128 302 132 302 162 150Z"
+              fill="#9fb0ba"
+              stroke="#16222a"
+              stroke-width="5"
+            />
+            <rect x="90" y="48" width="80" height="106" rx="22" fill="#d5dee3"/>
+            <rect x="99" y="62" width="62" height="90" rx="14" fill="#9fb0ba"/>
+            <path d="M114 138Q130 124 146 138L136 152H124Z" fill="#17232b"/>
+            <path d="M125 150L129 298 131 298 135 150Z" fill="#17232b"/>
+            <rect x="290" y="170" width="20" height="38" fill="#f3f7f9"/>
+            <rect x="274" y="96" width="52" height="70" rx="16" fill="#d5dee3"/>
+            <rect x="282" y="206" width="36" height="104" rx="8" fill="url(#th2)"/>
+          </g>
+        </g>
+      </defs>
+    </svg>
+
+    <nav class="top">
+      <div class="w">
+        <a class="logo" href="#">
+          <span class="wm">ODONTO<br>UFPEL</span>
+          <span class="ls">Radiologia</span>
+        </a>
+        <div class="links">
+          <a href="#materiais">Materiais</a>
+          <a href="#escala">Escala</a>
+          <a href="#quiz">Quiz</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="w">
+        <div class="ht">
+          <div class="eyebrow">Faculdade de Odontologia · UFPel</div>
+          <h1>Materiais odontológicos na imagem radiográfica</h1>
+          <p>
+            Aprenda a reconhecer restaurações, forramentos, materiais endodônticos,
+            próteses, implantes e aparelhos pelo grau de radiopacidade e pelo
+            aspecto na radiografia.
+          </p>
+          <div class="srch">
+            <input
+              id="q"
+              type="search"
+              placeholder="Buscar material (ex.: amálgama, guta-percha)"
+              aria-label="Buscar material"
+            >
+          </div>
+          <div class="cta">
+            <a class="p" href="#materiais">Explorar materiais</a>
+            <a href="#quiz">Fazer o quiz</a>
+          </div>
+        </div>
+        <div class="hx">
+          <svg
+            viewBox="0 0 400 330"
+            aria-label="Radiografia simulada com materiais clicáveis"
+          >
+            <use href="#tg"/>
+            <g filter="url(#bl2)">
+              <rect x="110" y="70" width="38" height="34" rx="7" fill="#fbfdfe"/>
+              <path d="M125 150L129 298 131 298 135 150Z" fill="#f2fafc"/>
+            </g>
+            <g class="hp" onclick="oN('Amálgama')">
+              <circle class="pt" cx="129" cy="87" r="18"/>
+              <circle cx="129" cy="87" r="20" fill="transparent"/>
+              <text x="178" y="92">Amálgama</text>
+            </g>
+            <g class="hp" onclick="oN('Guta-percha')">
+              <circle class="pt" cx="130" cy="225" r="18"/>
+              <circle cx="130" cy="225" r="20" fill="transparent"/>
+              <text x="156" y="230">Guta-percha</text>
+            </g>
+            <g class="hp" onclick="oN('Implante de titânio')">
+              <circle class="pt" cx="300" cy="258" r="22"/>
+              <circle cx="300" cy="258" r="24" fill="transparent"/>
+              <text x="214" y="300">Implante</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <main class="w">
+      <section id="materiais">
+        <h2>Catálogo de materiais</h2>
+        <p class="sub">
+          Toque em um material para ver o aspecto radiográfico e onde ele aparece
+          no dente.
+        </p>
+        <div class="fl" id="fl"></div>
+        <div class="grid" id="gr"></div>
+        <div class="none" id="no">Nenhum material encontrado.</div>
+      </section>
+
+      <section id="escala">
+        <h2>Escala de radiopacidade</h2>
+        <p class="sub">
+          Do menos ao mais radiopaco. Faixas indicam materiais de radiopacidade variável.
+        </p>
+        <div class="ax">
+          <span></span>
+          <div>
+            <span>Baixa</span>
+            <span>Moderada</span>
+            <span>Muito alta</span>
+          </div>
+        </div>
+        <div class="rank" id="rk"></div>
+        <p class="sub" style="margin-top: 16px; font-size: .82rem">
+          Classificação didática em 5 níveis, derivada das descrições qualitativas
+          de cada material. Não é uma medida densitométrica.
+        </p>
+      </section>
+
+      <section id="quiz">
+        <h2>Quiz: que material é este?</h2>
+        <p class="sub">Leia o aspecto radiográfico e escolha o material.</p>
+        <div class="qz">
+          <span class="tag">Questão <span id="qn">1</span></span>
+          <div class="q" id="qq"></div>
+          <div class="op" id="qo"></div>
+          <div class="qf">
+            <span>Acertos: <b id="qs">0/0</b></span>
+            <button class="btn p" id="qx" style="display: none">Próxima →</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="w">
+        Material didático de radiologia · Faculdade de Odontologia, UFPel.
+        Conteúdo resumido: consulte sempre a literatura e seu professor de radiologia.
+      </div>
+    </footer>
+
+    <dialog id="dl">
+      <button class="x" id="cl" aria-label="Fechar">✕</button>
+      <div class="dg">
+        <div class="dx">
+          <svg id="sv" viewBox="0 0 400 360" aria-label="Esquema do dente e implante">
+            <defs>
+              <pattern id="th" width="10" height="7" patternUnits="userSpaceOnUse">
+                <rect width="10" height="7" fill="#dfe8ec"/>
+                <path d="M0 6H10" stroke="#6d818c" stroke-width="2"/>
+              </pattern>
+              <filter id="bl">
+                <feGaussianBlur stdDeviation="1.2"/>
+              </filter>
+            </defs>
+            <rect width="400" height="360" fill="#0b161e"/>
+            <rect y="160" width="400" height="200" fill="#2b3d48"/>
+            <path
+              d="M0 160Q130 148 400 160"
+              stroke="#7f95a1"
+              stroke-width="3"
+              fill="none"
+              opacity=".4"
+            />
+            <g filter="url(#bl)">
+              <path
+                d="M98 150L128 302 132 302 162 150Z"
+                fill="#9fb0ba"
+                stroke="#16222a"
+                stroke-width="5"
+              />
+              <rect x="90" y="48" width="80" height="106" rx="22" fill="#d5dee3"/>
+              <rect x="99" y="62" width="62" height="90" rx="14" fill="#9fb0ba"/>
+              <path d="M114 138Q130 124 146 138L136 152H124Z" fill="#17232b"/>
+              <path d="M125 150L129 298 131 298 135 150Z" fill="#17232b"/>
+              <rect x="290" y="170" width="20" height="38" fill="#f3f7f9"/>
+              <rect x="274" y="96" width="52" height="70" rx="16" fill="#d5dee3"/>
+              <rect x="282" y="206" width="36" height="104" rx="8" fill="url(#th)"/>
+            </g>
+            <text
+              x="130"
+              y="344"
+              fill="#7f95a1"
+              font-size="13"
+              text-anchor="middle"
+              font-family="system-ui"
+            >Dente natural</text>
+            <text
+              x="300"
+              y="344"
+              fill="#7f95a1"
+              font-size="13"
+              text-anchor="middle"
+              font-family="system-ui"
+            >Implante</text>
+            <g id="hg"></g>
+          </svg>
+        </div>
+        <div class="db">
+          <span class="tag" id="dt"></span>
+          <h3 id="dn"></h3>
+          <div class="mt" id="dm"></div>
+          <div class="lv" id="dv"></div>
+          <p id="dd"></p>
+          <div class="wh" id="dw"></div>
+          <div class="rf" id="rf"></div>
+          <div class="cf" id="cf"></div>
+          <div class="dn">
+            <button class="btn" id="pv">← Anterior</button>
+            <button class="btn p" id="nx">Próximo →</button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
