@@ -16,11 +16,10 @@ const zones = {
 
 const LEVEL_LABELS = ["", "Muito baixa", "Baixa", "Moderada", "Alta", "Muito alta"];
 const CATEGORIES = [
-  "Restauradores",
-  "Forramentos e bases",
+  "Dentística",
+  "Prótese dentária",
   "Endodontia",
-  "Próteses",
-  "Implantes",
+  "Implantodontia",
   "Ortodontia",
 ];
 
@@ -32,7 +31,8 @@ const materials = [
     min: 5,
     max: 5,
     zone: "rest",
-    description: "Intensamente radiopaco, homogêneo e com alto contraste em relação ao dente.",
+    description:
+      "Área de radiopacidade metálica, homogênea, com alto contraste em relação ao dente e de contornos regulares.",
   },
   {
     name: "Resina composta",
@@ -48,7 +48,8 @@ const materials = [
     min: 1,
     max: 3,
     zone: "oclusal",
-    description: "Fina imagem radiopaca na superfície oclusal; alguns produtos são pouco visíveis.",
+    description:
+      "Fina imagem radiopaca que acompanha o desenho das fissuras na superfície oclusal. A pequena espessura e a sobreposição do esmalte podem dificultar sua identificação; a ausência de imagem evidente não confirma a ausência do material.",
   },
   {
     name: "Cimento de ionômero de vidro convencional",
@@ -56,7 +57,8 @@ const materials = [
     min: 2,
     max: 3,
     zone: "rest",
-    description: "Radiopacidade baixa a moderada, podendo se aproximar da dentina ou do esmalte.",
+    description:
+      "Radiopacidade bastante variável. Algumas formulações apresentam contraste inferior ao da dentina e podem dificultar a diferenciação entre material, base e lesão cariosa.",
   },
   {
     name: "Cimento de ionômero de vidro modificado por resina",
@@ -64,39 +66,133 @@ const materials = [
     min: 3,
     max: 4,
     zone: "rest",
-    description: "Radiopacidade variável conforme a formulação; pode se assemelhar à resina composta.",
+    description:
+      "Radiopacidade variável conforme a formulação; pode se assemelhar à resina composta. Quando empregado como material forrador, pode aparecer como uma camada de contraste diferente sob a restauração.",
   },
   {
-    name: "Restauração metálica fundida",
+    name: "Coroa metalocerâmica",
     category: CATEGORIES[0],
-    min: 5,
+    min: 4,
     max: 5,
-    zone: "rest",
-    description: "Muito radiopaca, homogênea e com limites bem definidos.",
+    zone: "coroa",
+    description:
+      "Infraestrutura de radiopacidade metálica que pode ocultar o remanescente dentário. A camada cerâmica é radiopaca, mas nem sempre distinguível, especialmente nas regiões de sobreposição.",
   },
   {
     name: "Hidróxido de cálcio (forramento)",
-    category: CATEGORIES[1],
+    category: CATEGORIES[0],
     min: 2,
     max: 4,
     zone: "fund",
-    description: "Camada fina de radiopacidade variável, geralmente localizada próxima à polpa.",
+    description:
+      "Camada fina de radiopacidade variável, geralmente localizada próxima à polpa.",
+  },
+  {
+    name: "Cimento resinoso",
+    category: CATEGORIES[0],
+    min: 3,
+    max: 4,
+    zone: "fund",
+    description:
+      "Pode aparecer como uma linha radiopaca entre a restauração indireta e o preparo. A visualização depende da espessura da camada e da ausência de sobreposição.",
   },
   {
     name: "Cimento de fosfato de zinco",
-    category: CATEGORIES[1],
+    category: CATEGORIES[0],
     min: 3,
     max: 4,
     zone: "fund",
-    description: "Geralmente radiopaco, embora a visualização dependa da espessura da camada.",
+    description:
+      "Pode aparecer como uma linha radiopaca entre a restauração indireta e o preparo. A visualização depende da espessura da camada e da ausência de sobreposição.",
   },
   {
-    name: "Óxido de zinco e eugenol ou IRM",
-    category: CATEGORIES[1],
+    name: "Cimento de policarboxilato de zinco",
+    category: CATEGORIES[0],
+    min: 2,
+    max: 4,
+    zone: "fund",
+    description:
+      "Pode aparecer como uma linha radiopaca entre a restauração indireta e o preparo. A visualização depende da espessura da camada e da ausência de sobreposição.",
+  },
+  {
+    name: "Óxido de zinco e eugenol",
+    category: CATEGORIES[0],
     min: 3,
     max: 4,
     zone: "fund",
-    description: "Radiopaco, com intensidade dependente da composição e da espessura.",
+    description:
+      "A forma acompanha seu uso como restauração temporária ou forramento. É radiopaco, com intensidade dependente da composição e da espessura.",
+  },
+  {
+    name: "Restauração metálica fundida",
+    category: CATEGORIES[1],
+    min: 5,
+    max: 5,
+    zone: "rest",
+    description:
+      "A forma pode ajudar a reconhecer uma inlay, onlay ou coroa. É radiopaca, homogênea e com limites bem definidos. A intensa radiopacidade limita a avaliação das estruturas situadas sob o metal.",
+  },
+  {
+    name: "Coroa ou estrutura de zircônia",
+    category: CATEGORIES[1],
+    min: 4,
+    max: 5,
+    zone: "coroa",
+    description:
+      "Geralmente muito radiopaca e homogênea, podendo apresentar radiopacidade próxima à dos metais. A elevada radiopacidade pode dificultar a distinção em relação a estruturas metálicas. A radiografia isolada geralmente não permite confirmar a composição.",
+  },
+  {
+    name: "Coroa de aço inoxidável",
+    category: CATEGORIES[1],
+    min: 5,
+    max: 5,
+    zone: "coroa",
+    description:
+      "Contorno metálico fino e muito radiopaco que recobre toda a coroa dentária. O contorno periférico tende a ser bastante evidente; a porção central pode mostrar menor radiopacidade aparente, conforme a espessura atravessada pelo feixe.",
+  },
+  {
+    name: "Coroa provisória de resina acrílica",
+    category: CATEGORIES[1],
+    min: 1,
+    max: 1,
+    zone: "coroa",
+    description: "Baixa radiopacidade, podendo ser pouco perceptível ou quase invisível.",
+  },
+  {
+    name: "Pino metálico intrarradicular",
+    category: CATEGORIES[1],
+    min: 5,
+    max: 5,
+    zone: "pino",
+    description:
+      "Faixa de radiopacidade metálica, com formato cilíndrico, cônico ou rosqueado. Pode apresentar continuidade com um núcleo coronário. Forma, comprimento e relação com a obturação apical ajudam a caracterizar o conjunto.",
+  },
+  {
+    name: "Pino de fibra de vidro ou quartzo",
+    category: CATEGORIES[1],
+    min: 2,
+    max: 4,
+    zone: "pino",
+    description:
+      "Estrutura intrarradicular de formato geralmente cônico ou cilíndrico e radiopacidade variável conforme a formulação. Pode apresentar menor contraste que pinos metálicos.",
+  },
+  {
+    name: "Prótese parcial removível metálica",
+    category: CATEGORIES[1],
+    min: 5,
+    max: 5,
+    zone: "reb",
+    description:
+      "Grampos, apoios, conectores e malha aparecem intensamente radiopacos. A base acrílica pode ser pouco perceptível.",
+  },
+  {
+    name: "Prótese acrílica",
+    category: CATEGORIES[1],
+    min: 1,
+    max: 2,
+    zone: "reb",
+    description:
+      "A base apresenta baixa radiopacidade, nem sempre identificável; dentes artificiais e grampos metálicos incorporados podem ser mais visíveis.",
   },
   {
     name: "Guta-percha",
@@ -104,7 +200,8 @@ const materials = [
     min: 4,
     max: 4,
     zone: "canal",
-    description: "Material radiopaco que acompanha o canal, com aspecto afilado ou de massa compactada.",
+    description:
+      "Material radiopaco que acompanha o canal, com aspecto afilado ou de massa compactada. A aparência varia conforme a quantidade de material e a técnica de obturação.",
   },
   {
     name: "Cimento endodôntico",
@@ -112,10 +209,11 @@ const materials = [
     min: 3,
     max: 4,
     zone: "canal",
-    description: "Fina camada radiopaca ao redor do material obturador, muitas vezes sem limite individualizável.",
+    description:
+      "Pode aparecer como uma fina camada radiopaca ao redor do material obturador, muitas vezes sem limite individualizável. Também pode formar acúmulos ou extravasamentos; sua imagem frequentemente se sobrepõe à da guta-percha.",
   },
   {
-    name: "Cone único com sealer biocerâmico",
+    name: "Obturação com cone único e sealer biocerâmico",
     category: CATEGORIES[2],
     min: 4,
     max: 5,
@@ -128,7 +226,8 @@ const materials = [
     min: 5,
     max: 5,
     zone: "canal",
-    description: "Linha metálica fina, lisa, afilada e intensamente radiopaca no interior do canal.",
+    description:
+      "Linha de radiopacidade metálica fina, lisa e afilada, com contornos regulares no interior do canal.",
   },
   {
     name: "Hidróxido de cálcio intracanal",
@@ -136,10 +235,11 @@ const materials = [
     min: 1,
     max: 3,
     zone: "canal",
-    description: "Preenchimento temporário de radiopacidade variável, por vezes irregular ou pouco contrastante.",
+    description:
+      "Preenchimento temporário de radiopacidade variável, por vezes irregular ou pouco contrastante. A visibilidade depende do veículo e dos radiopacificadores incorporados; a radiografia não permite confirmar, isoladamente, sua composição.",
   },
   {
-    name: "Material retrobturador",
+    name: "Material retro-obturador",
     category: CATEGORIES[2],
     min: 3,
     max: 5,
@@ -152,95 +252,58 @@ const materials = [
     min: 5,
     max: 5,
     zone: "canal",
-    description: "Instrumento metálico fino e intensamente radiopaco no interior do canal.",
-  },
-  {
-    name: "Pino metálico intrarradicular",
-    category: CATEGORIES[2],
-    min: 5,
-    max: 5,
-    zone: "pino",
-    description: "Intensamente radiopaco, com formato cilíndrico, cônico ou rosqueado.",
-  },
-  {
-    name: "Coroa metalocerâmica",
-    category: CATEGORIES[3],
-    min: 4,
-    max: 5,
-    zone: "coroa",
-    description: "Infraestrutura metálica muito radiopaca recoberta por cerâmica menos radiopaca.",
-  },
-  {
-    name: "Coroa ou estrutura de zircônia",
-    category: CATEGORIES[3],
-    min: 4,
-    max: 5,
-    zone: "coroa",
-    description: "Geralmente muito radiopaca e homogênea, podendo apresentar radiopacidade próxima à dos metais.",
-  },
-  {
-    name: "Coroa provisória de resina acrílica",
-    category: CATEGORIES[3],
-    min: 1,
-    max: 1,
-    zone: "coroa",
-    description: "Baixa radiopacidade, podendo ser pouco perceptível ou quase invisível.",
-  },
-  {
-    name: "Coroa de aço inoxidável",
-    category: CATEGORIES[3],
-    min: 5,
-    max: 5,
-    zone: "coroa",
-    description: "Casca metálica fina e muito radiopaca que recobre toda a coroa dentária.",
-  },
-  {
-    name: "Prótese parcial removível metálica",
-    category: CATEGORIES[3],
-    min: 5,
-    max: 5,
-    zone: "reb",
-    description: "Grampos, apoios, conectores e malha aparecem intensamente radiopacos.",
-  },
-  {
-    name: "Prótese acrílica",
-    category: CATEGORIES[3],
-    min: 1,
-    max: 2,
-    zone: "reb",
-    description: "A base apresenta baixa radiopacidade; dentes artificiais e componentes incorporados podem ser mais visíveis.",
+    description:
+      "Instrumento metálico fino e intensamente radiopaco no interior do canal. Pode estar presente durante a odontometria ou corresponder a um fragmento separado. A interpretação depende do contexto e da continuidade do instrumento.",
   },
   {
     name: "Implante de titânio",
-    category: CATEGORIES[4],
+    category: CATEGORIES[3],
     min: 5,
     max: 5,
     zone: "impl",
-    description: "Estrutura muito radiopaca, geralmente cilíndrica ou cônica, com roscas visíveis.",
+    description:
+      "Estrutura muito radiopaca, geralmente cilíndrica ou cônica, com roscas visíveis. Podem ser reconhecidos o corpo, as roscas, a plataforma e componentes de conexão. A imagem isolada não confirma a osseointegração.",
   },
   {
     name: "Pilar protético",
-    category: CATEGORIES[4],
+    category: CATEGORIES[3],
     min: 4,
     max: 5,
     zone: "pilar",
     description: "Componente radiopaco localizado entre o implante e a restauração protética.",
   },
   {
-    name: "Bandas, bráquetes e fios metálicos",
-    category: CATEGORIES[5],
+    name: "Bandas ortodônticas",
+    category: CATEGORIES[4],
     min: 5,
     max: 5,
     zone: "brk",
-    description: "Estruturas pequenas ou lineares, regulares e intensamente radiopacas.",
+    description: "Anéis metálicos que contornam coroas.",
+  },
+  {
+    name: "Bráquetes ortodônticos",
+    category: CATEGORIES[4],
+    min: 5,
+    max: 5,
+    zone: "brk",
+    description: "Pequenas estruturas de radiopacidade metálica sobrepostas aos dentes.",
+  },
+  {
+    name: "Fio metálico ortodôntico",
+    category: CATEGORIES[4],
+    min: 5,
+    max: 5,
+    zone: "brk",
+    description: "Fios que formam imagens radiopacas lineares.",
   },
   {
     name: "Contenção fixa",
-    category: CATEGORIES[5],
+    category: CATEGORIES[4],
     min: 5,
     max: 5,
     zone: "cerv",
-    description: "Alça, barra ou fio metálico radiopaco relacionado a vários dentes.",
+    description:
+      "Fio metálico linear ou ondulado na região anterior. A resina de fixação pode apresentar contraste diferente e nem sempre ser distinguível.",
   },
 ];
 
