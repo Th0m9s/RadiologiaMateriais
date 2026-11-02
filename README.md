@@ -6,6 +6,7 @@ Site didático sobre a aparência radiográfica de materiais odontológicos (rad
 - `index.html`: página e esquemas em SVG
 - `css/style.css`: estilos e paleta (bordô #781E46, azul escuro #161D47, azul claro #A7BCD6)
 - `js/app.js`: dados do catálogo atualizado (Dentística, Prótese dentária, Endodontia, Implantodontia e Ortodontia), zonas do esquema, comparações, filtros, escala e quiz
+- `assets/radiografias/README.md`: nomes dos arquivos reservados para as radiografias de cada material
 
 ## Como abrir
 Abra `index.html` no navegador, ou use a extensão Live Server no Cursor.

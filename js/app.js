@@ -27,6 +27,8 @@ const CATEGORIES = [
 const materials = [
   {
     name: "Amálgama",
+    image: "assets/radiografias/amalgama.jpg",
+    imageReady: false,
     category: CATEGORIES[0],
     min: 5,
     max: 5,
@@ -36,6 +38,8 @@ const materials = [
   },
   {
     name: "Resina composta",
+    image: "assets/radiografias/resina-composta.jpg",
+    imageReady: false,
     category: CATEGORIES[0],
     min: 3,
     max: 4,
@@ -44,6 +48,8 @@ const materials = [
   },
   {
     name: "Selante de fóssulas e fissuras",
+    image: "assets/radiografias/selante-fossulas-fissuras.jpg",
+    imageReady: false,
     category: CATEGORIES[0],
     min: 1,
     max: 3,
@@ -53,6 +59,8 @@ const materials = [
   },
   {
     name: "Cimento de ionômero de vidro convencional",
+    image: "assets/radiografias/cimento-ionomero-vidro-convencional.jpg",
+    imageReady: false,
     category: CATEGORIES[0],
     min: 2,
     max: 3,
@@ -62,6 +70,8 @@ const materials = [
   },
   {
     name: "Cimento de ionômero de vidro modificado por resina",
+    image: "assets/radiografias/cimento-ionomero-vidro-modificado-resina.jpg",
+    imageReady: false,
     category: CATEGORIES[0],
     min: 3,
     max: 4,
@@ -71,6 +81,8 @@ const materials = [
   },
   {
     name: "Coroa metalocerâmica",
+    image: "assets/radiografias/coroa-metaloceramica.jpg",
+    imageReady: false,
     category: CATEGORIES[0],
     min: 4,
     max: 5,
@@ -80,6 +92,8 @@ const materials = [
   },
   {
     name: "Hidróxido de cálcio (forramento)",
+    image: "assets/radiografias/hidroxido-calcio-forramento.jpg",
+    imageReady: false,
     category: CATEGORIES[0],
     min: 2,
     max: 4,
@@ -89,6 +103,8 @@ const materials = [
   },
   {
     name: "Cimento resinoso",
+    image: "assets/radiografias/cimento-resinoso.jpg",
+    imageReady: false,
     category: CATEGORIES[0],
     min: 3,
     max: 4,
@@ -98,6 +114,8 @@ const materials = [
   },
   {
     name: "Cimento de fosfato de zinco",
+    image: "assets/radiografias/cimento-fosfato-zinco.jpg",
+    imageReady: false,
     category: CATEGORIES[0],
     min: 3,
     max: 4,
@@ -107,6 +125,8 @@ const materials = [
   },
   {
     name: "Cimento de policarboxilato de zinco",
+    image: "assets/radiografias/cimento-policarboxilato-zinco.jpg",
+    imageReady: false,
     category: CATEGORIES[0],
     min: 2,
     max: 4,
@@ -116,6 +136,8 @@ const materials = [
   },
   {
     name: "Óxido de zinco e eugenol",
+    image: "assets/radiografias/oxido-zinco-eugenol.jpg",
+    imageReady: false,
     category: CATEGORIES[0],
     min: 3,
     max: 4,
@@ -125,6 +147,8 @@ const materials = [
   },
   {
     name: "Restauração metálica fundida",
+    image: "assets/radiografias/restauracao-metalica-fundida.jpg",
+    imageReady: false,
     category: CATEGORIES[1],
     min: 5,
     max: 5,
@@ -134,6 +158,8 @@ const materials = [
   },
   {
     name: "Coroa ou estrutura de zircônia",
+    image: "assets/radiografias/coroa-estrutura-zirconia.jpg",
+    imageReady: false,
     category: CATEGORIES[1],
     min: 4,
     max: 5,
@@ -143,6 +169,8 @@ const materials = [
   },
   {
     name: "Coroa de aço inoxidável",
+    image: "assets/radiografias/coroa-aco-inoxidavel.jpg",
+    imageReady: false,
     category: CATEGORIES[1],
     min: 5,
     max: 5,
@@ -152,6 +180,8 @@ const materials = [
   },
   {
     name: "Coroa provisória de resina acrílica",
+    image: "assets/radiografias/coroa-provisoria-resina-acrilica.jpg",
+    imageReady: false,
     category: CATEGORIES[1],
     min: 1,
     max: 1,
@@ -160,6 +190,8 @@ const materials = [
   },
   {
     name: "Pino metálico intrarradicular",
+    image: "assets/radiografias/pino-metalico-intrarradicular.jpg",
+    imageReady: false,
     category: CATEGORIES[1],
     min: 5,
     max: 5,
@@ -169,6 +201,8 @@ const materials = [
   },
   {
     name: "Pino de fibra de vidro ou quartzo",
+    image: "assets/radiografias/pino-fibra-vidro-quartzo.jpg",
+    imageReady: false,
     category: CATEGORIES[1],
     min: 2,
     max: 4,
@@ -178,6 +212,8 @@ const materials = [
   },
   {
     name: "Prótese parcial removível metálica",
+    image: "assets/radiografias/protese-parcial-removivel-metalica.jpg",
+    imageReady: false,
     category: CATEGORIES[1],
     min: 5,
     max: 5,
@@ -187,6 +223,8 @@ const materials = [
   },
   {
     name: "Prótese acrílica",
+    image: "assets/radiografias/protese-acrilica.jpg",
+    imageReady: false,
     category: CATEGORIES[1],
     min: 1,
     max: 2,
@@ -196,6 +234,8 @@ const materials = [
   },
   {
     name: "Guta-percha",
+    image: "assets/radiografias/guta-percha.jpg",
+    imageReady: false,
     category: CATEGORIES[2],
     min: 4,
     max: 4,
@@ -205,6 +245,8 @@ const materials = [
   },
   {
     name: "Cimento endodôntico",
+    image: "assets/radiografias/cimento-endodontico.jpg",
+    imageReady: false,
     category: CATEGORIES[2],
     min: 3,
     max: 4,
@@ -214,6 +256,8 @@ const materials = [
   },
   {
     name: "Obturação com cone único e sealer biocerâmico",
+    image: "assets/radiografias/obturacao-cone-unico-sealer-bioceramico.jpg",
+    imageReady: false,
     category: CATEGORIES[2],
     min: 4,
     max: 5,
@@ -222,6 +266,8 @@ const materials = [
   },
   {
     name: "Cone de prata",
+    image: "assets/radiografias/cone-prata.jpg",
+    imageReady: false,
     category: CATEGORIES[2],
     min: 5,
     max: 5,
@@ -231,6 +277,8 @@ const materials = [
   },
   {
     name: "Hidróxido de cálcio intracanal",
+    image: "assets/radiografias/hidroxido-calcio-intracanal.jpg",
+    imageReady: false,
     category: CATEGORIES[2],
     min: 1,
     max: 3,
@@ -240,6 +288,8 @@ const materials = [
   },
   {
     name: "Material retro-obturador",
+    image: "assets/radiografias/material-retro-obturador.jpg",
+    imageReady: false,
     category: CATEGORIES[2],
     min: 3,
     max: 5,
@@ -248,6 +298,8 @@ const materials = [
   },
   {
     name: "Lima endodôntica",
+    image: "assets/radiografias/lima-endodontica.jpg",
+    imageReady: false,
     category: CATEGORIES[2],
     min: 5,
     max: 5,
@@ -257,6 +309,8 @@ const materials = [
   },
   {
     name: "Implante de titânio",
+    image: "assets/radiografias/implante-titanio.jpg",
+    imageReady: false,
     category: CATEGORIES[3],
     min: 5,
     max: 5,
@@ -266,6 +320,8 @@ const materials = [
   },
   {
     name: "Pilar protético",
+    image: "assets/radiografias/pilar-protetico.jpg",
+    imageReady: false,
     category: CATEGORIES[3],
     min: 4,
     max: 5,
@@ -274,6 +330,8 @@ const materials = [
   },
   {
     name: "Bandas ortodônticas",
+    image: "assets/radiografias/bandas-ortodonticas.jpg",
+    imageReady: false,
     category: CATEGORIES[4],
     min: 5,
     max: 5,
@@ -282,6 +340,8 @@ const materials = [
   },
   {
     name: "Bráquetes ortodônticos",
+    image: "assets/radiografias/braquetes-ortodonticos.jpg",
+    imageReady: false,
     category: CATEGORIES[4],
     min: 5,
     max: 5,
@@ -290,6 +350,8 @@ const materials = [
   },
   {
     name: "Fio metálico ortodôntico",
+    image: "assets/radiografias/fio-metalico-ortodontico.jpg",
+    imageReady: false,
     category: CATEGORIES[4],
     min: 5,
     max: 5,
@@ -298,6 +360,8 @@ const materials = [
   },
   {
     name: "Contenção fixa",
+    image: "assets/radiografias/contencao-fixa.jpg",
+    imageReady: false,
     category: CATEGORIES[4],
     min: 5,
     max: 5,
@@ -321,6 +385,7 @@ let selectedCategory = "Todos";
 let searchQuery = "";
 let currentMaterialIndex = 0;
 let visibleMaterials = [];
+let detailImageRequest = 0;
 
 // Apresentação dos níveis de radiopacidade.
 const grayTone = (level) => {
@@ -351,7 +416,7 @@ const materialThumbnail = (material) => {
 
   return `
     <svg
-      class="th"
+      class="th th-fallback"
       viewBox="${centerX - size} ${centerY - size * 0.55} ${size * 2} ${size * 1.1}"
       preserveAspectRatio="xMidYMid slice"
       aria-hidden="true"
@@ -400,7 +465,15 @@ function buildCatalog() {
     .map(
       (material, index) => `
         <button class="card" data-index="${index}">
-          ${materialThumbnail(material)}
+          <span class="th-wrap">
+            ${materialThumbnail(material)}
+            ${
+              material.imageReady
+                ? `<img class="th-photo" src="${material.image}" alt="Radiografia de ${material.name}">`
+                : ""
+            }
+            <span class="photo-pending-label">Foto pendente</span>
+          </span>
           <span class="tag">${material.category}</span>
           <h3>${material.name}</h3>
           <div class="mt">${levelIndicators(material)}</div>
@@ -411,6 +484,15 @@ function buildCatalog() {
     .join("");
 
   getElement("no").style.display = visibleMaterials.length ? "none" : "block";
+
+  document.querySelectorAll(".th-photo").forEach((image) => {
+    const showPhoto = () => image.closest(".th-wrap").classList.add("has-photo");
+    image.onload = showPhoto;
+    image.onerror = () => image.remove();
+    if (image.complete && image.naturalWidth > 0) {
+      showPhoto();
+    }
+  });
 
   document.querySelectorAll(".card").forEach((card) => {
     card.onclick = () => showMaterial(Number(card.dataset.index), visibleMaterials);
@@ -445,6 +527,40 @@ function showMaterial(index, materialList) {
   renderGrayScale(material);
   renderConfusions(material);
   highlightZone(coordinates);
+
+  const photo = getElement("detail-photo");
+  const illustration = getElement("sv");
+  const pendingLabel = getElement("photo-pending");
+  const request = ++detailImageRequest;
+
+  photo.hidden = true;
+  illustration.hidden = false;
+  pendingLabel.hidden = false;
+  photo.onload = null;
+  photo.onerror = null;
+  photo.removeAttribute("src");
+  photo.alt = `Radiografia de ${material.name}`;
+  if (material.imageReady) {
+    photo.onload = () => {
+      if (request !== detailImageRequest) {
+        return;
+      }
+
+      photo.hidden = false;
+      illustration.hidden = true;
+      pendingLabel.hidden = true;
+    };
+    photo.onerror = () => {
+      if (request === detailImageRequest) {
+        photo.hidden = true;
+        photo.removeAttribute("src");
+      }
+    };
+    photo.src = material.image;
+    if (photo.complete && photo.naturalWidth > 0) {
+      photo.onload();
+    }
+  }
 
   if (!getElement("dl").open) {
     getElement("dl").showModal();
